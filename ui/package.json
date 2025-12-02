@@ -10,7 +10,7 @@
     "argo-ui": "git+https://github.com/argoproj/argo-ui.git#5ff344ac9692c14dd108468bd3c020c3c75181cb",
     "classnames": "2.2.6",
     "json-loader": "^0.5.7",
-    "axios": "^1.6.2",
+    "axios": "^1.13.2",
     "recharts": "^2.9.0",
     "null-loader": "^4.0.1",
     "react": "^16.9.3",

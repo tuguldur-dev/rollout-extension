@@ -27,6 +27,7 @@ const config = {
         loader: 'ts-loader',
         options: {
           allowTsInNodeModules: true,
+          transpileOnly: true,
           configFile: path.resolve('./src/tsconfig.json')
         },
       },
@@ -41,7 +42,20 @@ const config = {
       },
       {
         test: /\.scss$/,
-        use: ['style-loader', 'raw-loader', 'sass-loader'],
+        use: [
+          'style-loader',
+          'raw-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                includePaths: [__dirname],
+                quietDeps: true,
+                silenceDeprecations: ['import', 'legacy-js-api', 'global-builtin', 'color-functions', 'mixed-decls'],
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,
